@@ -1,0 +1,13 @@
+.wrapper {
+    position: relative;
+}
+
+.sc-intro {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+}
+
+.sc-intro .video {}
+
+.sc-intro .video video {}

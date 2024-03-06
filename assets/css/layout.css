@@ -1,0 +1,58 @@
+@import url(/assets/css/reset.css);
+@import url(/assets/css/common.css);
+@import url(/assets/css/fonts.css);
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#header .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1312px;
+    margin: 0 auto;
+    padding: 17px 0;
+    opacity: 0;
+    visibility: hidden
+}
+
+#header.wheel .inner {
+    opacity: 1;
+    visibility: visible
+}
+
+#header h1.logo {
+    width: 100px;
+}
+
+#header h1.logo img {
+    filter: brightness(0) invert(1);
+}
+
+#header .menu {
+    display: flex;
+    gap: 50px;
+}
+
+#header .menu li a {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+}
+
+#header .menu li a.lang {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#header .menu li a.lang .btn-lang {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
