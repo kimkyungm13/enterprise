@@ -28,6 +28,7 @@
     transform: translateY(0);
 }
 
+
 #header h1.logo {
     width: 100px;
     padding: 17px 0;
@@ -35,6 +36,14 @@
 
 #header h1.logo img {
     filter: brightness(0) invert(1);
+}
+
+body.black {
+    background: #000;
+}
+
+body #header h1.logo.black img {
+    filter: invert(0);
 }
 
 #header .menu {
