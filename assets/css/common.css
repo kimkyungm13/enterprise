@@ -6,3 +6,17 @@
     width: 1px;
     height: 1px;
 }
+
+.h-title {
+    font-size: 72px;
+    line-height: 1.28;
+    font-weight: 700;
+    color: #000
+}
+
+.h-title-w {
+    font-size: 72px;
+    line-height: 1.28;
+    font-weight: 700;
+    color: #fff
+}

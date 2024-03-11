@@ -1,4 +1,7 @@
 $(function () {
+    $('.lang').click(function () {
+        $(this).toggleClass('active')
+    })
     // 스크롤 헤더
     window.addEventListener('scroll', function () {
         var scrollPosition = window.scrollY;
@@ -53,14 +56,30 @@ $(window).scroll(function () {
     var sectionPossibility = $('.sc-possibility').offset().top;
 
     if ($(window).scrollTop() >= sectionChallenge && $(window).scrollTop() < sectionPossibility) {
-        $('.logo').addClass('black'); // 섹션 one에 도달하면 one 클래스를 추가
+        $('#header').addClass('black');
     } else {
-        $('.logo').removeClass('black'); // 섹션 one보다 위에 있으면 one 클래스를 제거
+        $('#header').removeClass('black');
     } if ($(window).scrollTop() >= sectionPossibility) {
-        $('.logo').removeClass('black'); // 섹션 three 이후에는 one 클래스를 제거
+        $('#header').removeClass('black');
         $('body').addClass('black')
     } else {
         $('body').removeClass('black')
 
     }
 });
+
+
+// $(window).on('scroll', function () {
+//     var scrollTop = $(window).scrollTop();
+//     var sectionIntro = $('.sc-intro').offset().top;
+//     var sectionShowcase = $('.sc-showcase').offset().top;
+//     var sectionChallenge = $('.sc-challenge').offset().top;
+//     var sectionProve = $('.sc-prove').offset().top;
+//     var sectionGallery = $('.sc-gallery').offset().top;
+//     var sectionPossibility = $('.sc-possibility').offset().top;
+//     var sectionDataid = $('.sc-dataid').offset().top;
+//     var sectionFeature = $('.sc-feature').offset().top;
+//     var sectionGround = $('.sc-ground').offset().top;
+
+//     $('#header').toggleClass('black', $('#heading').toggleClass('black', scrollTop >= sectionChallenge && scrollTop < sectionProve || scrollTop >= sectionProve && scrollTop < sectionGallery || scrollTop >= sectionGallery))
+// });
