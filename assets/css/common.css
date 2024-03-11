@@ -7,16 +7,30 @@
     height: 1px;
 }
 
+.headline {
+    max-width: 50%;
+    align-self: flex-start;
+    padding-top: 130px;
+    flex-shrink: 0;
+}
+
 .h-title {
     font-size: 72px;
     line-height: 1.28;
     font-weight: 700;
-    color: #000
+    color: #000;
 }
 
 .h-title-w {
     font-size: 72px;
     line-height: 1.28;
     font-weight: 700;
-    color: #fff
+    color: #fff;
+}
+
+.paragraph {
+    align-self: flex-end;
+    font-size: 24px;
+    line-height: 1.67;
+    font-weight: 600;
 }
