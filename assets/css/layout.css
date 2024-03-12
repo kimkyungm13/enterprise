@@ -38,6 +38,10 @@
     filter: brightness(0) invert(1);
 }
 
+body {
+    transition: background 0.3s;
+}
+
 body.black {
     background: #000;
 }

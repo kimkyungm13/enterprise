@@ -67,6 +67,7 @@
     text-align: center;
     color: #fff;
     white-space: nowrap;
+    font-weight: 700;
 }
 
 .sc-intro .description .text.t1,
@@ -153,6 +154,7 @@
 
 .sc-showcase .case03 .txt {
     font-size: 24px;
+    /* opacity: 0; */
 }
 
 .sc-challenge {
@@ -414,11 +416,150 @@
     position: relative;
 }
 
-.sc-creator .text-box {
+.sc-creator .visual {
+    position: relative;
+}
+
+.sc-creator .visual .text-box {
     position: absolute;
     top: 50%;
     left: 200px;
     transform: translateY(-50%);
+}
+
+.sc-creator .slide {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: #fff;
+}
+
+.sc-creator .slide .slide-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.sc-creator .slide .slide-wrap ul.card-slide {
+    flex-shrink: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+.sc-creator .slide .inner {
+    display: flex;
+    align-items: center;
+}
+
+.sc-creator .slide .headline {
+    flex-shrink: 0;
+    padding-right: 160px;
+}
+
+.sc-creator .slide .inner .slide-wrap {
+    position: relative;
+}
+
+.sc-creator .slide .inner .slide-wrap ul {}
+
+.sc-creator .slide .inner .slide-wrap ul li.card-list {
+    position: relative;
+    width: 400px;
+    height: 540px;
+    margin-right: 40px;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li.bg01 {
+    background: url(/assets/images/image-sec-4-1.png) no-repeat top/cover;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li.bg01:before {
+    content: "";
+    display: block;
+    top: 0;
+    transition: .5s;
+    opacity: 1;
+    transition: opacity .5s;
+    background-blend-mode: multiply;
+    background-color: hsla(0, 0%, 42%, .3);
+}
+
+.sc-creator .slide .inner .slide-wrap ul li.bg02 {
+    background: #0049ff;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li.bg03 {
+    background: #131415;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li.bg04 {
+    background: #00bf41;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li.card-list .card {
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+    padding: 34px;
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li .card .title {
+    font-size: 50px;
+    font-weight: 600;
+    margin-right: 46px;
+    color: #fff;
+    line-height: 1.21;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li .card .caption {
+    position: absolute;
+    right: 31px;
+    top: 50px;
+    font-size: 30px;
+    line-height: .67;
+    color: #fff;
+    text-align: right;
+    font-family: Archivo;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li .card .contents {
+    font-size: 16px;
+    line-height: 1.63;
+    padding-top: 40px;
+    font-weight: 600;
+    position: relative;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li .card .list {
+    font-size: 16px;
+    line-height: 1.63;
+    margin: 0;
+    margin-top: 24px;
+    font-weight: 600;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li .card .list li+li {
+    margin-top: 8px;
+}
+
+.sc-creator .slide .inner .slide-wrap ul li .card .info {
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    bottom: 34px;
+    margin-top: auto;
+    padding-right: 40px;
 }
 
 .sc-ground {
@@ -464,4 +605,26 @@
 
 .sc-ground .inner .link-group a.btn-link {
     color: #000
+}
+
+.top {
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 100px;
+    bottom: 40px;
+    z-index: 50;
+    background-color: #111;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+}
+
+.top.show {
+    opacity: 1;
+    visibility: visible;
 }
