@@ -30,110 +30,92 @@ $(function () {
         $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
-    $(window).scroll(function () {
-        const sectionChallenge = $('.sc-challenge').offset().top;
-        const sectionProve = $('.sc-prove').offset().top;
-        const sectionPossibility = $('.sc-possibility').offset().top;
 
-        if ($(window).scrollTop() >= sectionChallenge && $(window).scrollTop() < sectionPossibility) {
-            $('#header').addClass('black');
-        } else {
-            $('#header').removeClass('black');
-        } if ($(window).scrollTop() >= sectionPossibility) {
-            $('#header').removeClass('black');
-            $('body').addClass('black')
-        } else {
-            $('body').removeClass('black')
+    // gsap common
+    gsap.defaults({
+        ease: "none"
+    })
 
+    // intro gsap tl
+    const intro = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".sc-intro",
+            start: "0% 0%",
+            end: "100% 100%",
+            scrub: 0,
+            // markers: true
         }
     });
-    // window.addEventListener("scroll", reveal);
-    const intro = gsap.timeline();
-    intro.from(".description .t1", { opacity: 0, duration: 1 })
-        .to(".description .t1", { opacity: 1, duration: 1 })
-        .to(".description .t1", { opacity: 0, duration: 1 })
-        .from(".description .t2", { opacity: 0, duration: 1 }, "<")
-        .to(".description .t2", { opacity: 1, duration: 1 })
-        .to(".description .t2", { opacity: 0, duration: 1 })
-        .from(".description .t3", { opacity: 0, duration: 1 }, "<")
-        .to(".description .t3", { opacity: 1, duration: 1 })
-        .to(".description .t3", { opacity: 0, duration: 1 })
-        .from(".description .t4", { opacity: 0, duration: 1 }, "<")
-        .to(".description .t4", { opacity: 1, duration: 1 })
-        .to(".description .t4", { opacity: 0, duration: 1 });
 
-    ScrollTrigger.create({
-        animation: intro,
-        trigger: ".sc-intro",
-        start: "top top",
-        end: "+=6000",
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        markers: true
-    });
-    const showcase = gsap.timeline();
-    showcase.to(".sc-showcase .case01 .txt", { opacity: 1, duration: 2 })
-        .to(".sc-showcase .line01", { xPercent: 100 }, "text")
-        .to(".sc-showcase .line03", { xPercent: -100 }, "text")
-        .to(".sc-showcase .case01 .txt", { opacity: 0, duration: 2 })
+    intro.to(".sc-intro .sticky", { '--opacity': 1 }, 'a')
+        .to(".description .t1", { opacity: 1 }, 'a')
+        .to(".description .t1", { opacity: 0 })
+        .from(".description .t2", { opacity: 0 })
+        .to(".description .t2", { opacity: 1 })
+        .to(".description .t2", { opacity: 0 })
+        .from(".description .t3", { opacity: 0 })
+        .to(".description .t3", { opacity: 1 })
+        .to(".description .t3", { opacity: 0 })
+        .from(".description .t4", { opacity: 0 })
+        .to(".description .t4", { opacity: 1 })
 
-    ScrollTrigger.create({
-        animation: showcase,
-        trigger: ".sc-showcase",
-        start: "top top",
-        end: "+=3000",
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        markers: true
+
+    const showcase = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".sc-showcase",
+            start: "0% 0%",
+            end: "100% 100%",
+            scrub: 0,
+            // markers: true
+        }
     });
+    showcase.to(".sc-showcase .title", { opacity: 1 }, "a")
+        .to(".sc-showcase .sticky", { '--opacity': 1 }, "a")
+        .to(".sc-showcase .sticky", { '--opacity': 0 }, "b")
+        .to(".sc-showcase .line01", { xPercent: 100 }, "b")
+        .to(".sc-showcase .line03", { xPercent: -100 }, "b")
+        .to(".sc-showcase .title", { opacity: 0 })
+        .to(".sc-showcase .bg .img:nth-child(3)", { height: 0 })
+        .to(".sc-showcase .bg .img:nth-child(2)", { height: 0 })
+        .to(".sc-showcase .desc", { opacity: 1 }, "c")
+        .to(".sc-showcase .sticky", { '--opacity': 1 }, "c")
+
+    const prove = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".sc-prove",
+            start: "0% 80%",
+            end: "100% 95%",
+            scrub: 0,
+            markers: true
+        }
+    })
+    prove.to(".sc-prove", { '--x': 0 }, 'a')
+        .to(".sc-prove .line01", { xPercent: -163 }, 'a')
+        .to(".sc-prove .line03", { xPercent: 134 }, 'a')
+
+
+    // body bg 변경
+    ScrollTrigger.create({
+        trigger: '[data-theme="dark"]',
+        start: '0% 50%',
+        end: '100% 50%',
+        toggleClass: {
+            targets: 'body',
+            className: 'black'
+        },
+    })
+
+    gsap.to('.sc-possibility .slide-sub', {
+        scrollTrigger: {
+            trigger: '.sc-possibility',
+            start: '0% 0%',
+            end: '100% 100%',
+            scrub: 0,
+            oninvalidOnRefresh: true
+        },
+        xPercent: -100,
+        x: function () {
+            return window.innerWidth
+        }
+    })
 });
-
-// const showcaseTxt = gsap.timeline();
-// showcaseTxt.to(".sc-showcase .case03 .txt", { opacity: 1, duration: 2 })
-//     .to(".sc-showcase .case03 .txt", { opacity: 0, duration: 2 })
-
-// ScrollTrigger.create({
-//     animation: showcaseTxt,
-//     trigger: ".case03",
-//     start: "top top",
-//     end: "+=3000",
-//     scrub: true,
-//     pin: true,
-//     markers: true
-// });
-
-// const introTl = gsap.timeline();
-// introTl.from(".sc-intro .description .text.t1", { opacity: 0, stagger: 0.2, y: -100, borderRadius: 200 })
-//     .from(".sc-intro .description .text.t2", { opacity: 0, stagger: 0.2, y: -100, borderRadius: 200 })
-
-// ScrollTrigger.create({
-//     trigger: ".sc-intro",
-//     start: "top top",
-//     end: "+=600vh",
-//     scrub: true,
-//     pin: true,
-//     anticipatePin: 1,
-//     markers: true
-// });
-
-
-
-
-
-// $(window).on('scroll', function () {
-//     const scrollTop = $(window).scrollTop();
-//     const sectionIntro = $('.sc-intro').offset().top;
-//     const sectionShowcase = $('.sc-showcase').offset().top;
-//     const sectionChallenge = $('.sc-challenge').offset().top;
-//     const sectionProve = $('.sc-prove').offset().top;
-//     const sectionGallery = $('.sc-gallery').offset().top;
-//     const sectionPossibility = $('.sc-possibility').offset().top;
-//     const sectionDataid = $('.sc-dataid').offset().top;
-//     const sectionFeature = $('.sc-feature').offset().top;
-//     const sectionGround = $('.sc-ground').offset().top;
-
-//     $('#header').toggleClass('black', $('#heading').toggleClass('black', scrollTop >= sectionChallenge && scrollTop < sectionProve || scrollTop >= sectionProve && scrollTop < sectionGallery || scrollTop >= sectionGallery))
-// });
-
