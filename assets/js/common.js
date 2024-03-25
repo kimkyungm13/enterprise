@@ -86,7 +86,7 @@ $(function () {
             start: "0% 80%",
             end: "100% 95%",
             scrub: 0,
-            markers: true
+            // markers: true
         }
     })
     prove.to(".sc-prove", { '--x': 0 }, 'a')
@@ -112,6 +112,75 @@ $(function () {
             end: '100% 100%',
             scrub: 0,
             oninvalidOnRefresh: true
+        },
+        xPercent: -100,
+        x: function () {
+            return window.innerWidth
+        }
+    })
+
+
+
+    gsap.to('.sc-feature', {
+        scrollTrigger: {
+            trigger: ".sc-feature",
+            start: "0% 100%",
+            end: "100% 70%",
+            scrub: 0,
+            // markers: true,
+        },
+        '--x': 0,
+    })
+
+    gsap.from('.sc-feature .title', {
+        scrollTrigger: {
+            trigger: ".sc-feature",
+            start: "0% 45%",
+            end: "100% 30%",
+            scrub: 0,
+            // markers: true,
+            onEnter: function () {
+                $('.sc-feature').addClass('blur')
+            },
+            onLeaveBack: function () {
+                $('.sc-feature').removeClass('blur')
+            }
+        },
+        opacity: 0
+    })
+    $('.sc-prove').each(function (i, el) {
+        const prove = gsap.timeline({
+            scrollTrigger: {
+                trigger: $(this),
+                start: `0% 80%`,
+                end: "100% 95%",
+                scrub: 0,
+            }
+        });
+        prove.to($(this), { '--x': 0 }, 'a')
+            .from($(this).find("span:nth-child(1)"), { transform: 'translateX(0%)' }, 'a')
+            .from($(this).find("span:nth-child(3)"), { transform: 'translateX(0%)' }, 'a')
+
+    })
+    visual = gsap.timeline();
+    visual.from('.sc-creator .text-box', {
+        scrollTrigger: {
+            trigger: '.sc-creator .visual',
+            start: 'top top',
+            end: '100% 100%',
+            scrub: 0,
+            markers: true
+        },
+        opacity: 0
+    }).to('.sc-creator .text-box', { opacity: 0 });
+    gsap.to('.sc-creator .slide', {
+        scrollTrigger: {
+            trigger: '.sc-creator',
+            start: '20% top',
+            end: '100% 100%',
+            scrub: 0,
+            oninvalidOnRefresh: true,
+            markers: true
         },
         xPercent: -100,
         x: function () {
