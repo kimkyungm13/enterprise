@@ -162,6 +162,26 @@ $(function () {
             .from($(this).find("span:nth-child(3)"), { transform: 'translateX(0%)' }, 'a')
 
     })
+
+
+    gsap.to('.sc-asset .slide', {
+        scrollTrigger: {
+            trigger: '.sc-asset',
+            start: '20% top',
+            end: '100% 100%',
+            scrub: 0,
+            oninvalidOnRefresh: true,
+            markers: true
+        },
+        xPercent: -100,
+        // x: function () {
+        //     return window.innerWidth
+        // }
+    })
+
+
+
+
     visual = gsap.timeline();
     visual.from('.sc-creator .text-box', {
         scrollTrigger: {
@@ -173,6 +193,7 @@ $(function () {
         },
         opacity: 0
     }).to('.sc-creator .text-box', { opacity: 0 });
+
     gsap.to('.sc-creator .slide', {
         scrollTrigger: {
             trigger: '.sc-creator',
