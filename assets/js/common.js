@@ -80,18 +80,18 @@ $(function () {
         .to(".sc-showcase .desc", { opacity: 1 }, "c")
         .to(".sc-showcase .sticky", { '--opacity': 1 }, "c")
 
-    const prove = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".sc-prove",
-            start: "0% 80%",
-            end: "100% 95%",
-            scrub: 0,
-            // markers: true
-        }
-    })
-    prove.to(".sc-prove", { '--x': 0 }, 'a')
-        .to(".sc-prove .line01", { xPercent: -163 }, 'a')
-        .to(".sc-prove .line03", { xPercent: 134 }, 'a')
+    // const prove = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".sc-prove",
+    //         start: "0% 80%",
+    //         end: "100% 95%",
+    //         scrub: 0,
+    //         // markers: true
+    //     }
+    // })
+    // prove.to(".sc-prove", { '--x': 0 }, 'a')
+    //     .to(".sc-prove .line01", { xPercent: -163 }, 'a')
+    //     .to(".sc-prove .line03", { xPercent: 134 }, 'a')
 
 
     // body bg 변경
@@ -104,7 +104,18 @@ $(function () {
             className: 'black'
         },
     })
-
+    $(`[data-theme="white"]`).each(function () {
+        ScrollTrigger.create({
+            trigger: $(this),
+            start: "0% 50%",
+            end: "100% 50%",
+            // markers:true,
+            toggleClass: {
+                targets: "header",
+                className: "black",
+            },
+        })
+    })
     gsap.to('.sc-possibility .slide-sub', {
         scrollTrigger: {
             trigger: '.sc-possibility',
@@ -175,8 +186,8 @@ $(function () {
             return window.innerWidth
         }
     })
-
-    gsap.to('.sc-asset .slide', {
+    const asset = gsap.timeline();
+    asset.to('.sc-asset .slide', {
         scrollTrigger: {
             trigger: '.sc-asset',
             start: '20% top',
@@ -189,6 +200,16 @@ $(function () {
         x: function () {
             return window.innerWidth
         }
+    }).from('.sc-asset .list', {
+        scrollTrigger: {
+            trigger: '.sc-asset .card',
+            start: 'top top',
+            end: '100% 100%',
+            scrub: 0,
+            oninvalidOnRefresh: true,
+            markers: true,
+        },
+        opacity: 0,
     })
 
 
