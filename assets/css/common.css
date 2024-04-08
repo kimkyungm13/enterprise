@@ -9,8 +9,8 @@
 
 .headline {
     max-width: 50%;
-    align-self: flex-start;
-    padding-top: 130px;
+    /* align-self: flex-start; */
+    /* padding-top: 130px; */
     flex-shrink: 0;
 }
 
