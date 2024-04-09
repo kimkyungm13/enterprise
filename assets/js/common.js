@@ -194,7 +194,32 @@ $(function () {
             end: '100% 100%',
             scrub: 0,
             oninvalidOnRefresh: true,
-            markers: true
+            markers: true,
+            onUpdate: function (self) {
+                step = Math.round(self.progress * 3);
+
+                $('.sc-asset').attr('data-step', step + 1)
+
+                if (self.progress > 0.5) {
+                    $('.title-item').text('전통금융')
+
+                } else {
+                    $('.title-item').text('미래금융')
+
+                }
+            },
+            onEnter() {
+                $('.sc-asset .down').addClass('show');
+            },
+            onLeave() {
+                $('.sc-asset .down').removeClass('show');
+            },
+            onEnterBack() {
+                $('.sc-asset .down').addClass('show');
+            },
+            onLeaveBack() {
+                $('.sc-asset .down').removeClass('show');
+            }
         },
         xPercent: -100,
         x: function () {
