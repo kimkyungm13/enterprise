@@ -1,0 +1,106 @@
+.blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+
+.headline {
+    max-width: 50%;
+    /* align-self: flex-start; */
+    /* padding-top: 130px; */
+    flex-shrink: 0;
+}
+
+.h-title {
+    font-size: 72px;
+    line-height: 1.28;
+    font-weight: 700;
+    color: #000;
+}
+
+.h-title-w {
+    font-size: 72px;
+    line-height: 1.28;
+    font-weight: 700;
+    color: #fff;
+}
+
+.paragraph {
+    font-size: 24px;
+    line-height: 1.67;
+    font-weight: 600;
+}
+
+
+/*카드형 info*/
+.info-main {
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    bottom: 34px;
+    margin-top: auto;
+    padding-right: 40px;
+}
+
+.info-main .info-pf {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-main .profile-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.info-main .profile-bg.type-1 {
+    background: #ff009d;
+}
+
+.info-main .profile-bg.type-2 {
+    background: #0049ff;
+}
+
+.info-main .profile-bg.type-3 {
+    background: #26ff00;
+}
+
+.info-main .profile-img {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.info-main .info {
+    font-size: 16px;
+    line-height: 1.63;
+    font-weight: 700;
+}
+
+.info-main .info-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: url(/assets/images/expand-icon.png) no-repeat 50%/cover;
+}
+
+.card.show .info-main .info-icon {
+    background: url(/assets/images/contract-icon.png) no-repeat 50%/cover;
+}
+
+.card .contents {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s
+}
