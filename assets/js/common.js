@@ -59,7 +59,7 @@ window.onload = function () {
             start: startValue,
             end: endValue,
             duration: 0.5,
-            markers: true,
+            // markers: true,
             toggleClass: {
                 targets: "header",
                 className: "black",
@@ -399,7 +399,7 @@ window.onload = function () {
                 start: '0 10%',
                 end: '100% 100%',
                 // duration: 0.5,
-                markers: true,
+                // markers: true,
                 onEnter: function () {
                     $(el).find('.card').addClass('show');
                 }, // 'this' 바인딩
@@ -447,7 +447,7 @@ window.onload = function () {
                 trigger: el,
                 start: '0 -80%',
                 end: '100% 100%',
-                markers: true,
+                // markers: true,
                 invalidateOnRefresh: true
             },
             'filter': 'blur(30px)',

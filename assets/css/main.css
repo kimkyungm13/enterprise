@@ -186,7 +186,7 @@
     align-items: center;
     justify-self: center;
     padding: 218px 0 226px;
-    background: url(/assets/images/prove.jpg);
+    background: url(../images/prove.jpg);
     background-size: cover;
     overflow: hidden;
     --x: 100%;
@@ -215,7 +215,7 @@
 }
 
 .sc-prove.prove-bg2 {
-    background: url(/assets/images/prove-bg2.jpg) no-repeat 50%;
+    background: url(../images/prove-bg2.jpg) no-repeat 50%;
     background-size: cover;
 }
 
@@ -712,7 +712,7 @@ body.black .sc-possibility .slide-sub .title .h-title {
 .service-area4 .main-title-card:after {
     content: "";
     display: block;
-    background-image: url(/assets/images/card-glow.png);
+    background-image: url(../images/card-glow.png);
     background-repeat: no-repeat;
     width: 160%;
     height: 160%;
@@ -1061,7 +1061,7 @@ body.black .sc-possibility .slide-sub .title .h-title {
     width: 40px;
     height: 40px;
     display: block;
-    background: url(/assets/images/contract-icon.png) no-repeat 50%/cover;
+    background: url(../images/contract-icon.png) no-repeat 50%/cover;
 } */
 
 
@@ -1469,11 +1469,11 @@ body.black .sc-possibility .slide-sub .title .h-title {
     width: 40px;
     height: 40px;
     display: block;
-    background: url(/assets/images/expand-icon.png) no-repeat 50%/cover;
+    background: url(../images/expand-icon.png) no-repeat 50%/cover;
 }
 
 .sc-asset .slide .inner .slide-wrap .card.show .info-main .info-icon {
-    background: url(/assets/images/contract-icon.png) no-repeat 50%/cover;
+    background: url(../images/contract-icon.png) no-repeat 50%/cover;
 }
 
 .sc-asset .slide .inner .slide-wrap .desc {
