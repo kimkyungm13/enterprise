@@ -172,7 +172,7 @@ window.onload = function () {
     })
     serviceArea1.to('.service-area1 .content', {
         x: function () {
-            console.log(document.querySelector('.service-area1 .headline').offsetWidth);
+            // console.log(document.querySelector('.service-area1 .headline').offsetWidth);
             return -$('.service-area1 .headline').outerWidth() - 100
             // return -555.95-100
             // return -document.querySelector('.service-area1 .headline').offsetWidth-100
