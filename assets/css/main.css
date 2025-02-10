@@ -184,7 +184,6 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-self: center;
     padding: 218px 0 226px;
     background: url(../images/prove.jpg);
     background-size: cover;
