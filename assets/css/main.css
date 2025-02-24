@@ -1100,8 +1100,6 @@ body.black .sc-possibility .slide-sub .title .h-title {
     background-size: cover;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
 }
 
 .sc-asset {
